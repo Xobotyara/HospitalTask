@@ -12,11 +12,9 @@ class Hospital(models.Model):
 
 class Department(models.Model):
 
-    name = models.CharField(max_length=60, verbose_name='Наименование',
-                            help_text="Наименование отделения")
+    name = models.CharField(max_length=60, verbose_name='Наименование', help_text="Наименование отделения")
     hospital = models.ForeignKey('Hospital', on_delete=models.CASCADE,
-                                 verbose_name='Мед. учреждение',
-                                 help_text="Медицинское учреждение, в котором находится отделение")
+                                 verbose_name='Мед. учреждение', help_text="Медицинское учреждение, в котором находится отделение")
 
     def get_absolute_url(self):
         return reverse('department-detail', args=[str(self.id)])
