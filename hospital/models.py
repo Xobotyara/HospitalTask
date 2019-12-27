@@ -4,8 +4,7 @@ from django.urls import reverse
 
 class Hospital(models.Model):
 
-    name = models.CharField(max_length=60, verbose_name='Наименование',
-                            help_text="Наименование медицинского учереждения")
+    name = models.CharField(max_length=60, verbose_name='Наименование', help_text="Наименование медицинского учереждения")
 
     def __str__(self):
         return self.name
